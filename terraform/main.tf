@@ -1,0 +1,12 @@
+provider "aws" {
+  region = "eu-north-1"
+}
+
+resource "aws_instance" "flask_ec2" {
+  ami           = "ami-07c8c1b18ca66bb07"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "FlaskAppServer"
+  }
+}

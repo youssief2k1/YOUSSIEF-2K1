@@ -1,0 +1,12 @@
+[Unit]
+Description=Flask App Service
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/opt/flask_app
+ExecStart=/usr/bin/docker compose up
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
